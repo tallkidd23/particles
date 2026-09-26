@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Air Current Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>AIR CURRENT SIM<span class="blink">_</span></h1>
+      <p class="sub">click + drag to blast air &middot; build walls &middot; watch vortices form</p>
+    </header>
+
+    <div class="stage">
+      <canvas id="simCanvas" width="648" height="648"></canvas>
+
+      <div class="panel">
+        <div class="group">
+          <label class="group-label">MODE</label>
+          <div class="btnrow">
+            <button id="modeBlow" class="mode active">💨 Blow Air</button>
+            <button id="modeWall" class="mode">🧱 Draw Wall</button>
+            <button id="modeErase" class="mode">🧽 Erase Wall</button>
+          </div>
+        </div>
+
+        <div class="group">
+          <label class="group-label">PRESETS</label>
+          <div class="btnrow">
+            <button id="presetClear">Open Field</button>
+            <button id="presetWall">Straight Wall</button>
+            <button id="presetCorner">Corner</button>
+          </div>
+        </div>
+
+        <div class="group">
+          <label>Blower Strength <span id="blowerVal">18</span></label>
+          <input type="range" id="blowerStrength" min="4" max="40" value="18" step="1">
+        </div>
+
+        <div class="group">
+          <label>Viscosity <span id="viscVal">0.00005</span></label>
+          <input type="range" id="viscosity" min="0" max="50" value="5" step="1">
+        </div>
+
+        <div class="group">
+          <label>Particles <span id="particleVal">1500</span></label>
+          <input type="range" id="particleCount" min="200" max="4000" value="1500" step="100">
+        </div>
+
+        <div class="group">
+          <label>Trail Fade <span id="fadeVal">0.08</span></label>
+          <input type="range" id="trailFade" min="2" max="40" value="8" step="1">
+        </div>
+
+        <div class="group">
+          <button id="resetBtn" class="danger">↺ Reset Simulation</button>
+        </div>
+
+        <p class="hint" id="hintText">Drag anywhere on the canvas to blast air in that direction.</p>
+      </div>
+    </div>
+  </div>
+
+<script src="main.js"></script>
+</body>
+</html>
